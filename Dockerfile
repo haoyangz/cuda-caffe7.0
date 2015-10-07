@@ -28,6 +28,7 @@ RUN cd /scripts && git clone https://github.com/BVLC/caffe.git && cd caffe && \
   make -j"$(nproc)" all && \
   cd python && \
   for req in $(cat requirements.txt); do pip install $req; done && \
+  for req in $(cat requirements.txt); do pip install $req; done && \
   cd .. && \
   make pycaffe
   
