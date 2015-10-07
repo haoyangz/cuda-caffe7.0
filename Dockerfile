@@ -30,3 +30,4 @@ RUN cd /scripts && git clone https://github.com/BVLC/caffe.git && cd caffe && \
   cd .. && \
   make pycaffe
   
+ENV PYTHONPATH /scripts/caffe/python:$PYTHONPATH
