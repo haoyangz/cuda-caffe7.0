@@ -16,7 +16,8 @@ RUN apt-get update && apt-get install -y \
   libhdf5-dev \
   libleveldb-dev \
   liblmdb-dev \
-  libsnappy-dev
+  libsnappy-dev \
+  python-pip
 
 # Clone Caffe repo and move into it
 RUN mkdir /scripts
