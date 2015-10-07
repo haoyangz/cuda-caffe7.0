@@ -24,4 +24,9 @@ RUN cd /scripts && git clone https://github.com/BVLC/caffe.git && cd caffe && \
 # Copy Makefile
   cp Makefile.config.example Makefile.config && \
 # Make
-  make -j"$(nproc)" all
+  make -j"$(nproc)" all && \
+  cd python && \
+  for req in $(cat requirements.txt); do pip install $req; done && \
+  cd .. && \
+  make pycaffe
+  
