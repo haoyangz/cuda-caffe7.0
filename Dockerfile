@@ -17,7 +17,8 @@ RUN apt-get update && apt-get install -y \
   libleveldb-dev \
   liblmdb-dev \
   libsnappy-dev \
-  python-pip
+  python-pip \
+  python-numpy
 
 # Clone Caffe repo and move into it
 RUN mkdir /scripts
@@ -27,7 +28,6 @@ RUN cd /scripts && git clone https://github.com/BVLC/caffe.git && cd caffe && \
 # Make
   make -j"$(nproc)" all && \
   cd python && \
-  for req in $(cat requirements.txt); do pip install $req; done && \
   for req in $(cat requirements.txt); do pip install $req; done && \
   cd .. && \
   make pycaffe
