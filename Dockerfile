@@ -18,7 +18,10 @@ RUN apt-get update && apt-get install -y \
   liblmdb-dev \
   libsnappy-dev \
   python-pip \
-  python-numpy
+  python-numpy \
+  gfortran
+  
+RUN pip install --upgrade pip 
 
 # Clone Caffe repo and move into it
 RUN mkdir /scripts
